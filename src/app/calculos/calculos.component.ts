@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-calculos',
@@ -7,25 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculosComponent implements OnInit {
 
-
-
-
 estadio;
-c;
+proteinuria;
+checkoutForm;
+resultado;
 
 
-
-
-
-
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router:Router
+  ) { 
+    this.checkoutForm = this.formBuilder.group({})
+  }
 
   ngOnInit() {
   }
 
-}
 
-let compara = ()=>{
+  
+
+
+ compara(){
 
 if ( 90<this.estadio &&  this.proteinuria<30){
   this.resultado = "ALTA";
@@ -50,19 +54,19 @@ else if (15< this.estadio || this.estadio <=29  &&  this.proteinuria>=30 || this
 else if (15> this.estadio  &&  this.proteinuria>=30 || this.proteinuria<=299  ){
   this.resultado = "MENSUAL";
 }
+else if (90<= this.estadio || this.estadio >=15  &&  this.proteinuria>=300){
+  this.resultado = "TRIMESTRAL";
+}
 
-else {}
+else if (15>this.estadio &&  this.proteinuria>=300 ){
+  this.resultado = "MESUAL";
+}
 
+else if (90<= this.estadio || this.estadio >=15  &&  this.proteinuria>=300){
+  this.resultado = "TRIMESTRAL";
+}
 
-
-
-
-
-
-
-
-
-
-
+ else {console.log ("datos fuera de rango ¡¡¡ Introduzca datos correctos")}
+}
 
 }
