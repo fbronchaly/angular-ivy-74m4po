@@ -47,6 +47,10 @@ else if (90<= this.estadio || this.estadio >=30   &&  this.proteinuria>=30 || th
 else if (15< this.estadio || this.estadio <=29  &&  this.proteinuria>=30 || this.proteinuria<=299  ){
   this.resultado = "TRIMESTRAL";
 }
+else if (15> this.estadio  &&  this.proteinuria>=30 || this.proteinuria<=299  ){
+  this.resultado = "MENSUAL";
+}
+
 else {}
 
 
