@@ -26,9 +26,6 @@ resultado;
   }
 
 
-  
-
-
  compara(){
 
 if ( 90<this.estadio &&  this.proteinuria<30){
