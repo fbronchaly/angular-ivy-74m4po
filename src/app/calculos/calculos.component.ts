@@ -19,11 +19,21 @@ resultado;
     private formBuilder: FormBuilder,
     private router:Router
   ) { 
-    this.checkoutForm = this.formBuilder.group({})
+    this.checkoutForm = this.formBuilder.group({
+
+
+
+
+    });
   }
 
   ngOnInit() {
   }
+
+onSubmit(customerData) {
+  console.log ( customerData);
+}
+
 
 
  compara(){
@@ -66,4 +76,5 @@ else if (90<= this.estadio || this.estadio >=15  &&  this.proteinuria>=300){
  else {console.log ("datos fuera de rango ¡¡¡ Introduzca datos correctos")}
 }
 
-}
+};
+
